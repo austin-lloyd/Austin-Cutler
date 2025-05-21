@@ -11,7 +11,7 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (with Hans J.G. Hassell and Kevin Reuning)\nThis paper uses CES data from 2010 to 2022 to examine how voters’ perception of candidates’ ideological extremity influences their turnout and vote choice. Link to paper.\n\n\n\nWho’s in Office Anyways? Estimating the Race of Elected Officials from Names with Neural Networks"
+    "text": "The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (with Hans J.G. Hassell and Kevin Reuning)\nThis paper uses CES data from 2010 to 2022 to examine how voters’ perception of candidates’ ideological extremity influences their turnout and vote choice. Link to paper.\n\n\n\nWho’s in Office Anyways? Estimating the Race of Elected Officials from Names with Neural Networks\nIn this paper, I use data from the Florida voter file and the Candidates Characteristics Cooperative (C3) to estimate the race of state legislative officials using their names by training a BiLSTM model on both the voter file and the C3 data. Link to Polmeth 41 Poster"
   },
   {
     "objectID": "graphs.html",
@@ -60,6 +60,6 @@
     "href": "research.html#working-papers",
     "title": "Research",
     "section": "",
-    "text": "The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (with Hans J.G. Hassell and Kevin Reuning)\nThis paper uses CES data from 2010 to 2022 to examine how voters’ perception of candidates’ ideological extremity influences their turnout and vote choice. Link to paper.\n\n\n\nWho’s in Office Anyways? Estimating the Race of Elected Officials from Names with Neural Networks"
+    "text": "The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (with Hans J.G. Hassell and Kevin Reuning)\nThis paper uses CES data from 2010 to 2022 to examine how voters’ perception of candidates’ ideological extremity influences their turnout and vote choice. Link to paper.\n\n\n\nWho’s in Office Anyways? Estimating the Race of Elected Officials from Names with Neural Networks\nIn this paper, I use data from the Florida voter file and the Candidates Characteristics Cooperative (C3) to estimate the race of state legislative officials using their names by training a BiLSTM model on both the voter file and the C3 data. Link to Polmeth 41 Poster"
   }
 ]

@@ -3,9 +3,9 @@
     "path": "~/Austin Cutler/research.qmd",
     "project_path": "research.qmd",
     "type": "quarto_markdown",
-    "hash": "1743920784",
+    "hash": "0",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1690585028674.0,
     "source_on_save": false,
     "relative_order": 3,
@@ -17,15 +17,15 @@
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "27:0",
-        "cursorPosition": "21,37",
-        "scrollLine": "0"
+        "cursorPosition": "29,3",
+        "scrollLine": "8"
     },
     "folds": "",
-    "lastKnownWriteTime": 1747859632,
+    "lastKnownWriteTime": 1747861015,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1747859655472,
+    "last_content_update": 1747861015719,
     "read_only": false,
     "read_only_alternatives": []
 }

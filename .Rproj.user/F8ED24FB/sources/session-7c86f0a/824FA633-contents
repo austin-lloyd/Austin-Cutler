@@ -17,6 +17,14 @@ title: "Research"
     [This paper uses CES data from 2010 to 2022 to examine how voters' perception of candidates' ideological extremity influences their turnout and vote choice.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&e=2&dl=0)
 
 ---
+
 - Who’s in Office Anyways? Estimating the Race of Elected Officials from Names with Neural Networks
 
-    [In this paper, I use data from t]
+    [In this paper, I use data from the Florida voter file and the Candidates Characteristics Cooperative (C3) to estimate the race of state legislative officials using their names by training a BiLSTM model on both the voter file and the C3 data.]{style='color:gray'} [Link to Polmeth 41 Poster](https://www.dropbox.com/scl/fi/sx7si7lnoqmdv1e1r2r7z/cutler_polmeth_poster_24.pdf?rlkey=bwjafw8rsuc4w98bmix74nn9e&dl=0)
+
+---
+
+<!-- - Affective Policy Preferences: How Group Affect Can Shape Policy Positions
+
+    [For this paper I use panel data from the ANES 2016-2020 panel to assess the extent to which policy positions and affective polarization are related across several issues.]{style='color:gray'}
+-->
