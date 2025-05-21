@@ -1,0 +1,485 @@
+library(tidyverse)
+library(mclogit)
+
+##reading in the data from before
+read_rds('observational/cleaned data/ces_cleaned.rds') -> ces_cand_ideo_val
+
+read_csv('observational/data/extra_vars/pvi_all.csv') %>% 
+  filter(str_detect(seat, 'house') == TRUE) %>% 
+  rename(cd = district) %>% 
+  mutate(year = factor(year,
+                       levels = levels(ces_cand_ideo_val$year)),
+         cd   = str_replace(cd, "(\\D)(\\d)", "\\1-\\2")) %>% 
+  janitor::clean_names() -> pvi
+
+theme_set(theme_light()+
+            theme(legend.position = 'bottom',
+                  legend.text = element_text(size = 12),
+                  legend.title = element_text(size = 12),
+                  panel.grid = element_line(linetype = 2,
+                                            color = alpha('lightgray',.6)),
+                  strip.text   = element_text(color = 'white', size = 18,
+                                              face = 'bold'),
+                  axis.title = element_text(size = 20),
+                  axis.text  = element_text(size = 15)))
+
+#cleaning pvi and merging
+ces_cand_ideo_val %>% 
+  left_join(pvi) %>% 
+  mutate(cd_p  = factor(cd_p),
+         cd    = factor(cd),
+         state = factor(state),
+         pvi   = case_when(pid3_leaner == 2 ~ pvi,
+                           pid3_leaner == 1 ~ pvi*-1)) %>%
+  filter(!is.na(pvi)) -> ces_cand_ideo_val
+
+#fitting the model
+f <- house_vote ~ (h_in_ext+h_out_ext)*pvi+pid_str+ideo_str+age+age2+race2+educ2+gender
+
+fit <- mblogit(f, data = ces_cand_ideo_val, random = list(~1|cd,~1|year),
+               weights = weight_cumulative, 
+               maxit = 1000)
+
+summary(fit)
+
+#starting with in-party
+#setting up test data
+expand.grid(
+  h_in_ext    = seq(from = min(ces_cand_ideo_val$h_in_ext, na.rm = TRUE), 
+                    to = max(ces_cand_ideo_val$h_in_ext, na.rm = TRUE),
+                    by = .01),
+  pvi         = c(-13,0,13),
+  h_out_ext   = median(ces_cand_ideo_val$h_out_ext, na.rm = TRUE),
+  pid_str     = median(ces_cand_ideo_val$pid_str, na.rm = TRUE),
+  ideo_str    = median(ces_cand_ideo_val$ideo_str, na.rm = TRUE),
+  age         = median(ces_cand_ideo_val$age, na.rm = TRUE),
+  age2        = median(ces_cand_ideo_val$age2, na.rm = TRUE),
+  educ2       = median(ces_cand_ideo_val$educ2, na.rm = TRUE),
+  race2       = median(ces_cand_ideo_val$race2, na.rm = TRUE),
+  gender      = factor('Female',
+                       levels = c(levels(ces_cand_ideo_val$gender))),
+  cd          = as.factor(factor('AZ-02')),
+  year        = as.factor(median(as.numeric(as.character(ces_cand_ideo_val$year))))) -> test_i
+
+#effects
+##in by out
+test_i %>% 
+  select(h_in_ext, pvi) %>% 
+  bind_cols(predict(fit, newdata = test_i, type = 'response')) -> preds
+
+##ktw method
+fit_s <- fit
+
+sim_betas <- mvtnorm::rmvnorm(10000, fit$coefficients, vcov(fit))
+
+sim_preds <- apply(sim_betas, 1, function(x) {
+  fit_s$coefficients <- x
+  
+  pred_b <- predict(fit_s, newdata = test_i, type = 'response')
+  
+  test_i %>% 
+    bind_cols(as_tibble(pred_b)) %>% 
+    select(c(h_in_ext, pvi, in_party, out_party, other_cand, no_turnout))
+  
+})
+
+#cleaning predictions with bootstrapped ci
+bind_rows(sim_preds) %>% 
+  group_by(pvi, h_in_ext) %>% 
+  reframe(across(in_party:no_turnout, ~quantile(., probs = c(.025,.975)))) %>% 
+  mutate(qi = rep(c('lower','upper'), nrow(.)/2)) -> preds_ci 
+
+
+preds %>% 
+  mutate(qi = 'prob') %>% 
+  bind_rows(preds_ci) %>% 
+  pivot_longer(cols = c(in_party:no_turnout), names_to = 'vote_choice') %>% 
+  pivot_wider(names_from = qi, values_from = value) %>% 
+  mutate(vote_choice = case_when(vote_choice == 'no_turnout' ~ 'Abstain',
+                                 vote_choice == 'in_party' ~ 'Vote for In-party Candidate',
+                                 vote_choice == 'out_party' ~ 'Vote for Out-party Candidate',
+                                 vote_choice == 'other_cand' ~ 'Vote for Other Candidate'),
+         vote_choice = factor(vote_choice,
+                              levels = c('Abstain',
+                                         'Vote for In-party Candidate',
+                                         'Vote for Out-party Candidate',
+                                         'Vote for Other Candidate')),
+         pvi         = case_when(pvi == -13 ~ 'Out-party Advantage',
+                                 pvi == 0   ~ 'Competitive Race',
+                                 pvi == 13  ~ 'In-party Advantage'),
+         pvi         = factor(pvi,
+                              levels = c('Out-party Advantage',
+                                         'Competitive Race',
+                                         'In-party Advantage'))) -> in_p_pvi_preds
+
+in_p_pvi_preds %>% 
+  filter(vote_choice != 'Vote for Other Candidate') %>% 
+  ggplot(aes(x = h_in_ext, y = prob, color = pvi))+
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = 'gray54',
+              linetype = 2, alpha = .25)+
+  geom_line(aes(linetype = pvi), linewidth = 1)+
+  #ggh4x::facet_nested_wrap(vars(vote_choice, pvi))+
+  facet_wrap(vars(vote_choice), nrow = 1)+
+  scale_color_manual(values = c('In-party Advantage'  = '#ff4d4d',
+                                'Out-party Advantage' = '#59b36b',
+                                'Competitive Race'    = '#454500'))+
+  labs(y = 'Probability of Vote Choice', x = 'In-party Candidate Extremism',
+       color = 'District Competition', linetype = 'District Competition')+
+  ylim(0,.85)
+
+ggsave('figures/observational/in_party_pvi_int.png', width = 15, height = 10)
+
+#now for out-party
+#setting up test_o data
+expand.grid(
+  h_out_ext   = seq(from = min(ces_cand_ideo_val$h_out_ext, na.rm = TRUE), 
+                    to = max(ces_cand_ideo_val$h_out_ext, na.rm = TRUE),
+                    by = .01),
+  pvi         = c(-13,0,13),
+  h_in_ext    = median(ces_cand_ideo_val$h_in_ext, na.rm = TRUE),
+  pid_str     = median(ces_cand_ideo_val$pid_str, na.rm = TRUE),
+  ideo_str    = median(ces_cand_ideo_val$ideo_str, na.rm = TRUE),
+  age         = median(ces_cand_ideo_val$age, na.rm = TRUE),
+  age2        = median(ces_cand_ideo_val$age2, na.rm = TRUE),
+  educ2       = median(ces_cand_ideo_val$educ2, na.rm = TRUE),
+  race2       = median(ces_cand_ideo_val$race2, na.rm = TRUE),
+  gender      = factor('Female',
+                       levels = c(levels(ces_cand_ideo_val$gender))),
+  cd          = as.factor(factor('AZ-02')),
+  year        = as.factor(median(as.numeric(as.character(ces_cand_ideo_val$year))))) -> test_o
+
+#effects
+##out by out
+test_o %>% 
+  select(h_out_ext, pvi) %>% 
+  bind_cols(predict(fit, newdata = test_o, type = 'response')) -> preds
+
+##ktw method
+fit_s <- fit
+
+sim_preds <- apply(sim_betas, 1, function(x) {
+  fit_s$coefficients <- x
+  
+  pred_b <- predict(fit_s, newdata = test_o, type = 'response')
+  
+  test_o %>% 
+    bind_cols(as_tibble(pred_b)) %>% 
+    select(c(h_out_ext, pvi, in_party, out_party, other_cand, no_turnout))
+  
+})
+
+#cleaning predictions with bootstrapped ci
+bind_rows(sim_preds) %>% 
+  group_by(pvi, h_out_ext) %>% 
+  reframe(across(in_party:no_turnout, ~quantile(., probs = c(.025,.975)))) %>% 
+  mutate(qi = rep(c('lower','upper'), nrow(.)/2)) -> preds_ci 
+
+
+preds %>% 
+  mutate(qi = 'prob') %>% 
+  bind_rows(preds_ci) %>% 
+  pivot_longer(cols = c(in_party:no_turnout), names_to = 'vote_choice') %>% 
+  pivot_wider(names_from = qi, values_from = value) %>% 
+  mutate(vote_choice = case_when(vote_choice == 'no_turnout' ~ 'Abstain',
+                                 vote_choice == 'in_party' ~ 'Vote for In-party Candidate',
+                                 vote_choice == 'out_party' ~ 'Vote for Out-party Candidate',
+                                 vote_choice == 'other_cand' ~ 'Vote for Other Candidate'),
+         vote_choice = factor(vote_choice,
+                              levels = c('Abstain',
+                                         'Vote for In-party Candidate',
+                                         'Vote for Out-party Candidate',
+                                         'Vote for Other Candidate')),
+         pvi         = case_when(pvi == -13 ~ 'Out-party Advantage',
+                                 pvi == 0   ~ 'Competitive Race',
+                                 pvi == 13  ~ 'In-party Advantage'),
+         pvi         = factor(pvi,
+                              levels = c('Out-party Advantage',
+                                         'Competitive Race',
+                                         'In-party Advantage'))) -> out_p_pvi_preds
+
+out_p_pvi_preds %>% 
+  filter(vote_choice != 'Vote for Other Candidate') %>% 
+  ggplot(aes(x = h_out_ext, y = prob, color = pvi))+
+  geom_ribbon(aes(ymin = lower, ymax = upper), fill = 'gray54',
+              linetype = 2, alpha = .25)+
+  geom_line(aes(linetype = pvi), linewidth = 1)+
+  #ggh4x::facet_nested_wrap(vars(vote_choice, pvi))+
+  facet_wrap(vars(vote_choice), nrow = 1)+
+  scale_color_manual(values = c('In-party Advantage'  = '#ff4d4d',
+                                'Out-party Advantage' = '#59b36b',
+                                'Competitive Race'    = '#454500'))+
+  labs(y = 'Probability of Vote Choice', x = 'Out-party Candidate Extremism',
+       color = 'District Competition', linetype = 'District Competition')+
+  ylim(0,.85)
+
+ggsave('figures/observational/out_party_pvi_int.png', width = 15, height = 10)
+
+##in-party
+marginaleffects::slopes(fit, newdata = test_i, variables = 'h_in_ext',
+                        type = 'response', by = 'pvi') %>% 
+  as_tibble() %>% 
+  rename(vote_choice = group) %>% 
+  select(vote_choice, pvi, estimate, conf.low,conf.high,predicted,predicted_lo,predicted_hi) %>% 
+  mutate(vote_choice = case_when(vote_choice == 'no_turnout' ~ 'Abstain',
+                                 vote_choice == 'in_party' ~ 'Vote for In-party Candidate',
+                                 vote_choice == 'out_party' ~ 'Vote for Out-party Candidate',
+                                 vote_choice == 'other_cand' ~ 'Vote for Other Candidate'),
+         vote_choice = factor(vote_choice,
+                              levels = c('Abstain',
+                                         'Vote for In-party Candidate',
+                                         'Vote for Out-party Candidate',
+                                         'Vote for Other Candidate')),
+         pvi         = case_when(pvi == -13 ~ 'Out-party\nAdvantage',
+                                 pvi == 0   ~ 'Competitive\nRace',
+                                 pvi == 13  ~ 'In-party\nAdvantage'),
+         pvi         = factor(pvi,
+                              levels = c('Out-party\nAdvantage',
+                                         'Competitive\nRace',
+                                         'In-party\nAdvantage'))) -> in_slope_est 
+
+
+in_slope_est %>% 
+  ggplot(aes(x = pvi, y = estimate, color = pvi))+
+  geom_pointrange(aes(ymin = conf.low,ymax=conf.high))+
+  geom_hline(aes(yintercept = 0), linetype = 2)+
+  facet_wrap(vars(vote_choice), nrow = 1)+
+  scale_color_manual(values = c('In-party\nAdvantage'  = '#ff4d4d',
+                                'Out-party\nAdvantage' = '#59b36b',
+                                'Competitive\nRace'    = '#454500'))+
+  labs(y = 'Marginal Effect of In-party Candidate Extremity', x = 'District Competition')+
+  ylim(-.1,.1)+
+  theme(legend.position = 'none')
+
+ggsave('figures/observational/in_pvi_marginal_ef.png', width = 17, height = 10)
+
+##out-party
+marginaleffects::slopes(fit, newdata = test_o, variables = 'h_out_ext',
+                        type = 'response', by = 'pvi') %>% 
+  as_tibble() %>% 
+  rename(vote_choice = group) %>% 
+  select(vote_choice, pvi, estimate, conf.low,conf.high,predicted,predicted_lo,predicted_hi) %>% 
+  mutate(vote_choice = case_when(vote_choice == 'no_turnout' ~ 'Abstain',
+                                 vote_choice == 'in_party' ~ 'Vote for In-party Candidate',
+                                 vote_choice == 'out_party' ~ 'Vote for Out-party Candidate',
+                                 vote_choice == 'other_cand' ~ 'Vote for Other Candidate'),
+         vote_choice = factor(vote_choice,
+                              levels = c('Abstain',
+                                         'Vote for In-party Candidate',
+                                         'Vote for Out-party Candidate',
+                                         'Vote for Other Candidate')),
+         pvi         = case_when(pvi == -13 ~ 'Out-party\nAdvantage',
+                                 pvi == 0   ~ 'Competitive\nRace',
+                                 pvi == 13  ~ 'In-party\nAdvantage'),
+         pvi         = factor(pvi,
+                              levels = c('Out-party\nAdvantage',
+                                         'Competitive\nRace',
+                                         'In-party\nAdvantage'))) -> out_slope_est 
+  
+
+out_slope_est %>% 
+  ggplot(aes(x = pvi, y = estimate, color = pvi))+
+  geom_pointrange(aes(ymin = conf.low,ymax=conf.high))+
+  geom_hline(aes(yintercept = 0), linetype = 2)+
+  facet_wrap(vars(vote_choice), nrow = 1)+
+  scale_color_manual(values = c('In-party\nAdvantage'  = '#ff4d4d',
+                                'Out-party\nAdvantage' = '#59b36b',
+                                'Competitive\nRace'    = '#454500'))+
+  labs(y = 'Marginal Effect of Out-party Candidate Extremity', x = 'District Competition')+
+  ylim(-.1,.1)+
+  theme(legend.position = 'none')
+
+ggsave('figures/observational/out_pvi_marginal_ef.png', width = 17, height = 10)
+
+
+#now over the range of pvi
+##in-party
+expand.grid(
+  h_in_ext    = seq(from = min(ces_cand_ideo_val$h_in_ext, na.rm = TRUE), 
+                    to = max(ces_cand_ideo_val$h_in_ext, na.rm = TRUE),
+                    by = .01),
+  pvi         = seq(from = min(ces_cand_ideo_val$pvi, na.rm = TRUE), 
+                    to = max(ces_cand_ideo_val$pvi, na.rm = TRUE),
+                    by = 1),
+  h_out_ext   = median(ces_cand_ideo_val$h_out_ext, na.rm = TRUE),
+  pid_str     = median(ces_cand_ideo_val$pid_str, na.rm = TRUE),
+  ideo_str    = median(ces_cand_ideo_val$ideo_str, na.rm = TRUE),
+  age         = median(ces_cand_ideo_val$age, na.rm = TRUE),
+  age2        = median(ces_cand_ideo_val$age2, na.rm = TRUE),
+  educ2       = median(ces_cand_ideo_val$educ2, na.rm = TRUE),
+  race2       = median(ces_cand_ideo_val$race2, na.rm = TRUE),
+  gender      = factor('Female',
+                       levels = c(levels(ces_cand_ideo_val$gender))),
+  cd          = as.factor(factor('AZ-02')),
+  year        = as.factor(median(as.numeric(as.character(ces_cand_ideo_val$year))))) -> test_i2
+
+marginaleffects::slopes(fit, newdata = test_i2, variables = 'h_in_ext',
+                        type = 'response', by = 'pvi') %>% 
+  as_tibble() %>% 
+  rename(vote_choice = group) %>% 
+  select(vote_choice, pvi, estimate, conf.low,conf.high,predicted,predicted_lo,predicted_hi,p.value) %>% 
+  mutate(vote_choice = case_when(vote_choice == 'no_turnout' ~ 'Abstain',
+                                 vote_choice == 'in_party' ~ 'Vote for In-party Candidate',
+                                 vote_choice == 'out_party' ~ 'Vote for Out-party Candidate',
+                                 vote_choice == 'other_cand' ~ 'Vote for Other Candidate'),
+         vote_choice = factor(vote_choice,
+                              levels = c('Abstain',
+                                         'Vote for In-party Candidate',
+                                         'Vote for Out-party Candidate',
+                                         'Vote for Other Candidate'))) -> margin_in_full
+##graphing it
+margin_in_full %>% 
+  mutate(sig   = ifelse(p.value < .05, 'Yes', 'No'),
+         group = consecutive_id(sig)) -> margin_in_full
+
+###making extra observations to fill in gaps on figure
+margin_in_full %>% 
+  group_by(vote_choice,group) %>% 
+  filter(row_number() == 1|row_number() == n()) %>% 
+  group_by(vote_choice) %>% 
+  filter(abs(pvi) != 41) %>% 
+  ungroup() %>% 
+  mutate(group1 = rep(c(1:(nrow(.)/2)),each = 2)) -> group_dat 
+  
+group_dat %>% 
+  group_by(group1) %>% 
+  complete(pvi = full_seq(pvi,.01)) %>% 
+  fill(vote_choice,sig,group, .direction = 'downup') %>%
+  mutate(across(c(estimate,conf.low,conf.high),
+                ~seq(first(.), last(.), length.out = n()))) %>% 
+  ungroup() %>% 
+  filter(!pvi %in% unique(ces_cand_ideo_val$pvi)) %>% 
+  select(-group1) %>% 
+  group_by(vote_choice) %>% 
+  distinct(pvi, .keep_all = TRUE) %>% 
+  ungroup() -> fill_obs
+
+
+#putting it all together for the figure
+margin_in_full %>% 
+  bind_rows(fill_obs) %>% 
+  ggplot(aes(x = pvi, y = estimate,
+             ymin = conf.low, ymax = conf.high))+
+  geom_ribbon(aes(color = sig, fill = sig,group = group), 
+              alpha = 0.3, linetype = 2)+
+  geom_line(aes(color = sig, group = group),
+            linewidth = 1)+
+  geom_hline(aes(yintercept = 0), linetype = 2)+
+  geom_pointrange(data = filter(margin_in_full, abs(pvi) == 13|pvi==0),
+                  linewidth = .75)+
+  geom_label(data = filter(margin_in_full, abs(pvi) == 13|pvi==0),
+             aes(label = round(estimate, 3)), size = 3)+
+  facet_wrap(vars(vote_choice), nrow = 1)+
+  labs(y = 'Marginal Effect of In-party Candidate Extremity', 
+       x = 'District Competition',
+       color = 'p < 0.05', fill = 'p < 0.05')+
+  scale_color_manual(values = c('Yes' = '#ff664d', 'No' = '#33ffcc'))+
+  scale_fill_manual(values = c('Yes' = '#ff664d', 'No' = '#33ffcc'))
+
+ggsave('figures/observational/full_in_pvi_marginal_ef.png', width = 17, height = 10)
+
+##out-party
+expand.grid(
+  h_out_ext   = seq(from = min(ces_cand_ideo_val$h_out_ext, na.rm = TRUE), 
+                    to = max(ces_cand_ideo_val$h_out_ext, na.rm = TRUE),
+                    by = .01),
+  pvi         = seq(from = min(ces_cand_ideo_val$pvi, na.rm = TRUE), 
+                    to = max(ces_cand_ideo_val$pvi, na.rm = TRUE),
+                    by = 1),
+  h_in_ext    = median(ces_cand_ideo_val$h_in_ext, na.rm = TRUE),
+  pid_str     = median(ces_cand_ideo_val$pid_str, na.rm = TRUE),
+  ideo_str    = median(ces_cand_ideo_val$ideo_str, na.rm = TRUE),
+  age         = median(ces_cand_ideo_val$age, na.rm = TRUE),
+  age2        = median(ces_cand_ideo_val$age2, na.rm = TRUE),
+  educ2       = median(ces_cand_ideo_val$educ2, na.rm = TRUE),
+  race2       = median(ces_cand_ideo_val$race2, na.rm = TRUE),
+  gender      = factor('Female',
+                       levels = c(levels(ces_cand_ideo_val$gender))),
+  cd          = as.factor(factor('AZ-02')),
+  year        = as.factor(median(as.numeric(as.character(ces_cand_ideo_val$year))))) -> test_o2
+
+marginaleffects::slopes(fit, newdata = test_o2, variables = 'h_out_ext',
+                        type = 'response', by = 'pvi') %>% 
+  as_tibble() %>% 
+  rename(vote_choice = group) %>% 
+  select(vote_choice, pvi, estimate, conf.low,conf.high,predicted,predicted_lo,predicted_hi,p.value) %>% 
+  mutate(vote_choice = case_when(vote_choice == 'no_turnout' ~ 'Abstain',
+                                 vote_choice == 'in_party' ~ 'Vote for In-party Candidate',
+                                 vote_choice == 'out_party' ~ 'Vote for Out-party Candidate',
+                                 vote_choice == 'other_cand' ~ 'Vote for Other Candidate'),
+         vote_choice = factor(vote_choice,
+                              levels = c('Abstain',
+                                         'Vote for In-party Candidate',
+                                         'Vote for Out-party Candidate',
+                                         'Vote for Other Candidate'))) -> margin_out_full
+
+##graphing it
+margin_out_full %>% 
+  mutate(sig   = ifelse(p.value < .05, 'Yes', 'No'),
+         group = consecutive_id(sig)) -> margin_out_full
+
+###making extra observations to fill in gaps on figure
+margin_out_full %>% 
+  group_by(vote_choice,group) %>% 
+  filter(row_number() == 1|row_number() == n()) %>% 
+  group_by(vote_choice) %>% 
+  filter(abs(pvi) != 41) %>% 
+  ungroup() %>% 
+  mutate(group1 = rep(c(1:(nrow(.)/2)),each = 2)) -> group_dat_out
+
+group_dat_out %>% 
+  group_by(group1) %>% 
+  complete(pvi = full_seq(pvi,.01)) %>% 
+  fill(vote_choice,sig,group, .direction = 'downup') %>%
+  mutate(across(c(estimate,conf.low,conf.high),
+                ~seq(first(.), last(.), length.out = n()))) %>% 
+  ungroup() %>% 
+  filter(!pvi %in% unique(ces_cand_ideo_val$pvi)) %>% 
+  select(-group1) %>% 
+  group_by(vote_choice) %>% 
+  distinct(pvi, .keep_all = TRUE) %>% 
+  ungroup() -> fill_obs_out
+
+margin_out_full %>% 
+  bind_rows(fill_obs_out) %>% 
+  ggplot(aes(x = pvi, y = estimate,
+             ymin = conf.low, ymax = conf.high))+
+  geom_ribbon(aes(color = sig, fill = sig,group = group), 
+              alpha = 0.3, linetype = 2)+
+  geom_line(aes(color = sig, group = group),
+            linewidth = 1)+
+  geom_hline(aes(yintercept = 0), linetype = 2)+
+  geom_pointrange(data = filter(margin_out_full, abs(pvi) == 13|pvi==0),
+                  linewidth = .75)+
+  geom_label(data = filter(margin_out_full, abs(pvi) == 13|pvi==0),
+             aes(label = round(estimate, 3)), size = 3)+
+  facet_wrap(vars(vote_choice), nrow = 1)+
+  labs(y = 'Marginal Effect of Out-party Candidate Extremity', 
+       x = 'District Competition',
+       color = 'p < 0.05', fill = 'p < 0.05')+
+  scale_color_manual(values = c('Yes' = '#ff664d', 'No' = '#33ffcc'))+
+  scale_fill_manual(values = c('Yes' = '#ff664d', 'No' = '#33ffcc'))
+
+ggsave('figures/observational/full_out_pvi_marginal_ef.png', width = 17, height = 10)
+
+#merging marginal effects into neat table
+margin_in_full %>% 
+  select(vote_choice,pvi,estimate) %>% 
+  rename(in_party_extremity_effect = estimate) %>% 
+  left_join(margin_out_full %>% 
+              select(vote_choice,pvi,estimate) %>% 
+              rename(out_party_extremity_effect = estimate)) %>% 
+  filter(abs(pvi) == 13 | pvi == 1|pvi == 0) %>% 
+  arrange(pvi) -> marginal_effects_pvi
+
+write_csv(marginal_effects_pvi, 'observational/results/partisan_pvi_marg_ef.csv')
+
+#across the whole range of values
+margin_in_full %>% 
+  select(vote_choice,pvi,estimate) %>% 
+  rename(in_party_extremity_effect = estimate) %>% 
+  left_join(margin_out_full %>% 
+              select(vote_choice,pvi,estimate) %>% 
+              rename(out_party_extremity_effect = estimate)) %>% 
+  arrange(pvi) -> marginal_effects_pvi
+
+write_csv(marginal_effects_pvi, 'observational/results/full_partisan_pvi_marg_ef.csv')

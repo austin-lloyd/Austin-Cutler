@@ -1,0 +1,169 @@
+dv,cand,dv_val,se,scheme,strata,survey
+gov_vote,DeSantis,44.53920837812835,1.2448205316638787,CMAGR,No Stratification,FES
+gov_vote,Crist,54.26127056182827,1.2476311874092256,CMAGR,No Stratification,FES
+gov_vote,Roos,0.7287220254770952,0.21540167437648683,CMAGR,No Stratification,FES
+gov_vote,Gimenez,0.47079903456628175,0.12967478906068833,CMAGR,No Stratification,FES
+sen_vote,Rubio,42.166790688848195,1.2278314382076594,CMAGR,No Stratification,FES
+sen_vote,Demings,56.27148395289518,1.2334974902922229,CMAGR,No Stratification,FES
+sen_vote,Third Party,1.0783226612668102,0.2533011287973876,CMAGR,No Stratification,FES
+sen_vote,Other,0.4834026969898153,0.13363493030469215,CMAGR,No Stratification,FES
+house_vote,Republican,42.40568031786005,1.2422073569965861,CMAGR,No Stratification,FES
+house_vote,Democrat,54.558298510071914,1.2526974224304797,CMAGR,No Stratification,FES
+house_vote,Third Party,1.2582467724238247,0.2628550266980727,CMAGR,No Stratification,FES
+house_vote,Other,1.777774399644208,0.3308972019209982,CMAGR,No Stratification,FES
+climate,NA,1.9912426796385982,0.030552025468512024,CMAGR,No Stratification,FES
+wait_time,NA,5.821559424973824,0.5135525912148332,CMAGR,No Stratification,FES
+gov_vote,DeSantis,50.58903798794571,1.2174513475836806,CMAGR+Party,No Stratification,FES
+gov_vote,Crist,48.198081828873114,1.213509454945458,CMAGR+Party,No Stratification,FES
+gov_vote,Roos,0.7141310420556555,0.20125292145769835,CMAGR+Party,No Stratification,FES
+gov_vote,Gimenez,0.4987491411255258,0.15921491793319575,CMAGR+Party,No Stratification,FES
+sen_vote,Rubio,48.320105347810866,1.221106839778875,CMAGR+Party,No Stratification,FES
+sen_vote,Demings,50.01113787574154,1.2172425564336007,CMAGR+Party,No Stratification,FES
+sen_vote,Third Party,1.1118411613084982,0.23495039860145545,CMAGR+Party,No Stratification,FES
+sen_vote,Other,0.5569156151390889,0.1347651205626897,CMAGR+Party,No Stratification,FES
+house_vote,Republican,49.002604804010325,1.2313984645231133,CMAGR+Party,No Stratification,FES
+house_vote,Democrat,48.14845420632766,1.2226530734320793,CMAGR+Party,No Stratification,FES
+house_vote,Third Party,1.303890688541756,0.24557214866797386,CMAGR+Party,No Stratification,FES
+house_vote,Other,1.5450503011202659,0.29128965542228225,CMAGR+Party,No Stratification,FES
+climate,NA,2.0955461138000095,0.02921641588295048,CMAGR+Party,No Stratification,FES
+wait_time,NA,5.3692622349894465,0.3600580312691395,CMAGR+Party,No Stratification,FES
+gov_vote,DeSantis,51.134772175749774,1.143357846014029,CMAGR+Party+Precinct,No Stratification,FES
+gov_vote,Crist,47.6809798402902,1.1391017323059043,CMAGR+Party+Precinct,No Stratification,FES
+gov_vote,Roos,0.7400989739352404,0.22786091911118403,CMAGR+Party+Precinct,No Stratification,FES
+gov_vote,Gimenez,0.4441490100247832,0.12368992407288408,CMAGR+Party+Precinct,No Stratification,FES
+sen_vote,Rubio,48.830851359063566,1.147489505934688,CMAGR+Party+Precinct,No Stratification,FES
+sen_vote,Demings,49.508510237993484,1.143244237560525,CMAGR+Party+Precinct,No Stratification,FES
+sen_vote,Third Party,1.166281715347944,0.2708487622155592,CMAGR+Party+Precinct,No Stratification,FES
+sen_vote,Other,0.4943566875949955,0.10676054620280596,CMAGR+Party+Precinct,No Stratification,FES
+house_vote,Republican,49.47207758915664,1.1571694592826853,CMAGR+Party+Precinct,No Stratification,FES
+house_vote,Democrat,47.88310116624178,1.1488479985398723,CMAGR+Party+Precinct,No Stratification,FES
+house_vote,Third Party,1.2144745893343272,0.25666521647100415,CMAGR+Party+Precinct,No Stratification,FES
+house_vote,Other,1.4303466552672532,0.24160313253363316,CMAGR+Party+Precinct,No Stratification,FES
+climate,NA,2.119938156510341,0.028326794786918994,CMAGR+Party+Precinct,No Stratification,FES
+wait_time,NA,5.144923514619818,0.2808033261275788,CMAGR+Party+Precinct,No Stratification,FES
+gov_vote,DeSantis,44.59229153134709,1.2435183603966333,CMAGR,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Crist,54.212102680275045,1.2462756492841476,CMAGR,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Roos,0.7569533452707647,0.21522520682123752,CMAGR,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Gimenez,0.4386524431070984,0.11997938118185957,CMAGR,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Rubio,42.17539480520372,1.2259595459638912,CMAGR,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Demings,56.22183513985176,1.2320120685882892,CMAGR,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Third Party,1.1240273481809027,0.2632647818161228,CMAGR,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Other,0.47874270676361563,0.1283609861579459,CMAGR,"County, Votemode, Age, Gender, Race",FES
+house_vote,Republican,42.374333018550026,1.2396912559821835,CMAGR,"County, Votemode, Age, Gender, Race",FES
+house_vote,Democrat,54.514109286356074,1.2508204473634865,CMAGR,"County, Votemode, Age, Gender, Race",FES
+house_vote,Third Party,1.3327193605568686,0.2734324193230867,CMAGR,"County, Votemode, Age, Gender, Race",FES
+house_vote,Other,1.778838334537032,0.329859409595235,CMAGR,"County, Votemode, Age, Gender, Race",FES
+climate,NA,1.9887254335419058,0.03041142571632962,CMAGR,"County, Votemode, Age, Gender, Race",FES
+wait_time,NA,5.82273281800254,0.5191772073851871,CMAGR,"County, Votemode, Age, Gender, Race",FES
+gov_vote,DeSantis,50.63946210137893,1.2170715429642973,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Crist,48.19466452627702,1.2130656052513689,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Roos,0.7122192855880883,0.20104105558365962,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Gimenez,0.4536540867559584,0.1392764753366399,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Rubio,48.39214283160292,1.2212414898994313,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Demings,49.89066710815877,1.2167989933758145,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Third Party,1.1443778543190697,0.24118072891021902,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Other,0.5728122059192452,0.13972536179041173,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+house_vote,Republican,49.07411877579746,1.231675184516698,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+house_vote,Democrat,48.05129141496487,1.2220299049914602,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+house_vote,Third Party,1.302766117030841,0.24348254125337973,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+house_vote,Other,1.5718236922068318,0.29078203959829957,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+climate,NA,2.0963610641079837,0.029176554888959712,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+wait_time,NA,5.347291315260475,0.3515831034767371,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES
+gov_vote,DeSantis,51.156964347813314,1.1448208703928024,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Crist,47.662961855263866,1.140499240373395,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Roos,0.7298823997414966,0.2038993030628081,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+gov_vote,Gimenez,0.450191397181316,0.13097746825759315,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Rubio,48.85006035119277,1.1494800973936408,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Demings,49.41131897317146,1.1446589568539884,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Third Party,1.1900449828230903,0.2552843718238335,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+sen_vote,Other,0.5485756928126905,0.11872727327699054,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+house_vote,Republican,49.52871808426219,1.1592507389870683,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+house_vote,Democrat,47.76806834249354,1.1503321423123565,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+house_vote,Third Party,1.2094441572850763,0.23579473338110452,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+house_vote,Other,1.493769415959194,0.24142069303860336,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+climate,NA,2.1184710790189643,0.028269525452399993,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+wait_time,NA,5.137761385266494,0.2858799645321267,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES
+gov_vote,DeSantis,44.63050965227041,1.2438476278648598,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Crist,54.181391041074725,1.246508074996129,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Roos,0.7339013320373461,0.21496816059941776,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Gimenez,0.45419797461752154,0.12432462705886227,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Rubio,42.195977204932746,1.226808004700242,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Demings,56.21575496153546,1.2326285193265065,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Third Party,1.0997775411795772,0.25906187962848304,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Other,0.4884902923522126,0.13507262623634117,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Republican,42.42896522279326,1.2405658156291728,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Democrat,54.489657540883826,1.251218455133749,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Third Party,1.2957252112907536,0.26678853573789973,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Other,1.7856520250321615,0.33548943523762653,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+climate,NA,1.9921682068934434,0.030483247947193197,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+wait_time,NA,5.791360831984465,0.5159724948716015,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,DeSantis,50.71169081648355,1.2141231760422897,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Crist,48.09003685665007,1.2100787073426067,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Roos,0.7214774877740346,0.1944634583678779,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Gimenez,0.47679483909235326,0.14257718777273998,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Rubio,48.44565825591058,1.2185707248549364,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Demings,49.859411947267716,1.214297412804404,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Third Party,1.135235520207246,0.22831962867118036,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Other,0.5596942766144535,0.1363287317255786,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Republican,49.10716410869141,1.2289425471414905,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Democrat,48.03500085970415,1.2196149249104247,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Third Party,1.2839698686528747,0.22982324864642859,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Other,1.5738651629515785,0.2947480110125007,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+climate,NA,2.096033693460467,0.029119054775670835,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+wait_time,NA,5.352503517608895,0.353907247873263,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,DeSantis,51.10670431548272,1.1425592922120065,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Crist,47.74066046019488,1.138431656317214,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Roos,0.7074106548033925,0.20443471122740622,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,Gimenez,0.4452245695190033,0.12666822158685523,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Rubio,48.80955261778463,1.1470453259382818,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Demings,49.54870482266694,1.1426673833953325,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Third Party,1.126084885001786,0.24835864002561936,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+sen_vote,Other,0.5156576745466507,0.11236908780836846,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Republican,49.51167327675175,1.156605957582251,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Democrat,47.79367396787951,1.1477935898864466,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Third Party,1.2201579491426464,0.2375822527152216,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+house_vote,Other,1.4744948062260934,0.24650942167081685,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+climate,NA,2.1176721823371354,0.028154334341883826,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+wait_time,NA,5.153988089314138,0.29047709831728324,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES
+gov_vote,DeSantis,44.54687239912633,1.2466672990031964,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Crist,54.25980854558764,1.2491860436366342,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Roos,0.7380838859166993,0.2063824264761821,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Gimenez,0.4552351693693215,0.1258446917510575,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Rubio,42.09747568330505,1.2281231299280517,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Demings,56.32521710231116,1.2339673930635209,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Third Party,1.0965981203225459,0.26264164865558126,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Other,0.48070909406124224,0.13052689784492438,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Republican,42.36292216494608,1.2423476839879262,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Democrat,54.53319489960058,1.2533694291788218,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Third Party,1.2852602591099178,0.272516145609155,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Other,1.818622676343422,0.34227311450891323,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+climate,NA,1.9882882019961121,0.03032670103498697,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+wait_time,NA,5.790148673340435,0.52029975287929,CMAGR,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,DeSantis,50.704794556321254,1.2192370376830735,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Crist,48.08044480326294,1.215082218947282,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Roos,0.733416585310964,0.20558195797791423,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Gimenez,0.4813440551048376,0.14692598725313824,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Rubio,48.44413725436926,1.2234179404064214,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Demings,49.834729941898445,1.2189730865503432,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Third Party,1.1500479826484211,0.24132338420236396,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Other,0.5710848210838702,0.13487764739535518,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Republican,49.14737909385657,1.233776878777293,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Democrat,47.998643849721425,1.2242967558900395,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Third Party,1.3043537289591167,0.24395364019765137,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Other,1.5496233274628712,0.2958547860405125,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+climate,NA,2.0978591616103337,0.02930954176259059,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+wait_time,NA,5.318376922062805,0.35668426730123626,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,DeSantis,51.07730917697047,1.144585690078717,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Crist,47.75046534923195,1.1403743296383044,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Roos,0.7232667387368994,0.21166369480086958,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+gov_vote,Gimenez,0.4489587350606755,0.13339255921141108,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Rubio,48.77427825311745,1.148773799968494,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Demings,49.53934700846083,1.144326927824,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Third Party,1.1846696701638275,0.26243148456523485,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+sen_vote,Other,0.5017050682578947,0.10967815527865946,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Republican,49.399230141824525,1.1586091053982446,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Democrat,47.94748716478755,1.1501683091873376,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Third Party,1.1892139709568634,0.2411285611777775,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+house_vote,Other,1.4640687224310651,0.24334172395627618,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+climate,NA,2.114440431388837,0.02813704027343903,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES
+wait_time,NA,5.148831611252514,0.28838103240614776,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES

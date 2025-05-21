@@ -1,0 +1,22 @@
+---
+title: "CV"
+---
+
+```{=html}
+<style>
+  /* Hide the title element on the page */
+  .title {
+    display: none;
+  }
+</style>
+
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="CV.pdf" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download CV
+  </a>
+</p>
+
+<div class="embed-container">
+  <iframe src="CV.pdf" width="800" height="800" style="border: 0.5px"></iframe>
+</div>
+```

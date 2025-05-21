@@ -1,0 +1,14 @@
+---
+title: "Workshops"
+---
+
+
+While at FSU I have taught workshops on using R. Here I have a brief description of the workshop as well as a link to the course's website.
+
+## [Summer RI workshop](https://austin-cutler.quarto.pub/summer-ri-workshop/)
+
+This workshop is for incoming first year students to FSU. This workshop assumes no prior R experience and is designed to give incoming first year students a head start on learning to us R and Rstudio. The workshop covers installing R, basic functions in R, reading data into R, types of data, data cleaning, generating summary statistics, boolen logic, data visualization, for loops, and (briefly), writing functions in R. We also briefly cover expectations for graduate student life in general, and some aspects of using R that are tangentially related, such as computer file structures. The workshop is taught primarily using `tidyverse`, however for most applications the BaseR equivalent is also covered. The workshop is taught over four sessions, and the goal is for students to have a solid foundation for how R works before moving on to their first semester where they will solidify the skills taught in the class. I taught this workshop in the summer of 2023 and 2024, and helped develop the materials for the workshop for summer 2025.
+
+## Summer RII workshop
+
+This workshop is for rising second year PhD students, and builds off of the material covered in the RI workshop, as well as their classes throughout their first year. The goal of this workshop is to be a refresher on R for grad students after taking some time off, and to prepare them for taking MLE. Grad students who are not starting their second year have also taken it in the past.

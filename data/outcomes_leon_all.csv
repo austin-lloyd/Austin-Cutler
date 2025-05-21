@@ -1,0 +1,169 @@
+dv,cand,dv_val,se,scheme,strata,survey
+gov_vote,DeSantis,44.82345212677321,1.2499821090569456,CMAGR,No Stratification,FES w/Leon resample
+gov_vote,Crist,53.90207717380131,1.2532486325801624,CMAGR,No Stratification,FES w/Leon resample
+gov_vote,Roos,0.7301152886130233,0.20836297939819,CMAGR,No Stratification,FES w/Leon resample
+gov_vote,Gimenez,0.5443554108124543,0.16643859597684385,CMAGR,No Stratification,FES w/Leon resample
+sen_vote,Rubio,42.233345500408404,1.2296496092524187,CMAGR,No Stratification,FES w/Leon resample
+sen_vote,Demings,56.229514689681395,1.2357648316202083,CMAGR,No Stratification,FES w/Leon resample
+sen_vote,Third Party,1.0276751641744706,0.2505512004384749,CMAGR,No Stratification,FES w/Leon resample
+sen_vote,Other,0.5094646457357216,0.14146139876077599,CMAGR,No Stratification,FES w/Leon resample
+house_vote,Republican,42.66012123564162,1.2451055048054172,CMAGR,No Stratification,FES w/Leon resample
+house_vote,Democrat,54.255083767882304,1.256690160106641,CMAGR,No Stratification,FES w/Leon resample
+house_vote,Third Party,1.3599200164168108,0.27925693236363963,CMAGR,No Stratification,FES w/Leon resample
+house_vote,Other,1.724874980059263,0.33468275995920926,CMAGR,No Stratification,FES w/Leon resample
+climate,NA,1.9905923811294222,0.03044276911291087,CMAGR,No Stratification,FES w/Leon resample
+wait_time,NA,5.786225227561506,0.5133201064305158,CMAGR,No Stratification,FES w/Leon resample
+gov_vote,DeSantis,50.73499626866537,1.2222964396131435,CMAGR+Party,No Stratification,FES w/Leon resample
+gov_vote,Crist,47.998613862580825,1.2177868572296393,CMAGR+Party,No Stratification,FES w/Leon resample
+gov_vote,Roos,0.725990995173064,0.20703894558539554,CMAGR+Party,No Stratification,FES w/Leon resample
+gov_vote,Gimenez,0.5403988735807468,0.17431064729943782,CMAGR+Party,No Stratification,FES w/Leon resample
+sen_vote,Rubio,48.4679190135703,1.2259316610131672,CMAGR+Party,No Stratification,FES w/Leon resample
+sen_vote,Demings,49.84945894540702,1.2215730506713462,CMAGR+Party,No Stratification,FES w/Leon resample
+sen_vote,Third Party,1.085615137667852,0.2358287442477586,CMAGR+Party,No Stratification,FES w/Leon resample
+sen_vote,Other,0.5970069033548288,0.14149738914886878,CMAGR+Party,No Stratification,FES w/Leon resample
+house_vote,Republican,49.24341881825862,1.2367184136473626,CMAGR+Party,No Stratification,FES w/Leon resample
+house_vote,Democrat,47.932784050762116,1.2272345492192194,CMAGR+Party,No Stratification,FES w/Leon resample
+house_vote,Third Party,1.3335041463003219,0.243793705710833,CMAGR+Party,No Stratification,FES w/Leon resample
+house_vote,Other,1.490292984678946,0.27701785432597426,CMAGR+Party,No Stratification,FES w/Leon resample
+climate,NA,2.1038717193618717,0.029541411627355418,CMAGR+Party,No Stratification,FES w/Leon resample
+wait_time,NA,5.3888165882237224,0.36305210148645745,CMAGR+Party,No Stratification,FES w/Leon resample
+gov_vote,DeSantis,50.601664023312274,1.1561107635537993,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+gov_vote,Crist,48.11334272060965,1.1522586395221166,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+gov_vote,Roos,0.7180731399073943,0.2106025643096898,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+gov_vote,Gimenez,0.5669201161706791,0.1896265788097366,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+sen_vote,Rubio,48.415113563609324,1.158664654912583,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+sen_vote,Demings,49.96902787390647,1.15550536377557,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+sen_vote,Third Party,1.114889101323109,0.25531264547173815,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+sen_vote,Other,0.5009694611611019,0.11045894440287068,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+house_vote,Republican,48.97991883805678,1.1692937423668937,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+house_vote,Democrat,48.349450014050205,1.1626023387641147,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+house_vote,Third Party,1.2291239825752616,0.24125045587742316,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+house_vote,Other,1.4415071653177642,0.24697402660691808,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+climate,NA,2.107263488526424,0.028272823331572484,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+wait_time,NA,5.149280352718645,0.28661861329693766,CMAGR+Party+Precinct,No Stratification,FES w/Leon resample
+gov_vote,DeSantis,44.92164692233884,1.2531653370925184,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Crist,53.826664181526596,1.2563752795307477,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Roos,0.7403145038550588,0.21847508297816082,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Gimenez,0.511374392279508,0.16247695191736194,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Rubio,42.31338018181509,1.2345929450841773,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Demings,56.149062231073344,1.2403712188092866,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Third Party,1.024938036008861,0.2516643041633254,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Other,0.5126195511027054,0.1376858959272065,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Republican,42.75564420035078,1.249051356455818,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Democrat,54.202706018398,1.2599931625872691,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Third Party,1.3174428133836105,0.2763960683702909,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Other,1.7242069678676153,0.327079141080405,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+climate,NA,1.9954430700177586,0.03062655949145048,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+wait_time,NA,5.777117390506095,0.5058827628832487,CMAGR,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,DeSantis,50.813965573202005,1.2233515382217757,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Crist,47.91978524281542,1.2188668332829882,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Roos,0.6954697598793222,0.20742565965766757,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Gimenez,0.5707794241032469,0.18148150928397247,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Rubio,48.55054345357727,1.2269126717662378,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Demings,49.826935337940036,1.2228492450862671,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Third Party,1.0433052460662924,0.23283858978974753,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Other,0.5792159624163901,0.1399684514241932,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Republican,49.29559300069741,1.2378022082034619,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Democrat,47.907412712541216,1.2284006295362282,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Third Party,1.2830152778230863,0.24177519616337023,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Other,1.5139790089382787,0.2853375785995228,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+climate,NA,2.1043382561352155,0.029616249511518488,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+wait_time,NA,5.332270402800694,0.3484078157269348,CMAGR+Party,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,DeSantis,50.741577425243435,1.1545970763968467,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Crist,47.93534596838033,1.1502828725236744,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Roos,0.7336308704250296,0.21277407928795034,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,Gimenez,0.5894457359512052,0.20415626654308855,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Rubio,48.604283341214924,1.1576555270986715,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Demings,49.71789628029665,1.1539750246405305,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Third Party,1.136991404771368,0.2587448474742879,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+sen_vote,Other,0.540828973717055,0.1212464567065238,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Republican,49.130020253885924,1.167468595769201,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Democrat,48.20407769017651,1.1603358885644242,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Third Party,1.1991204648862213,0.23594310776111466,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+house_vote,Other,1.4667815910513358,0.23870942295077888,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+climate,NA,2.1096749062229794,0.02817441382182399,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+wait_time,NA,5.115349485785432,0.2844321351575413,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race",FES w/Leon resample
+gov_vote,DeSantis,44.77385105572902,1.2537096104005878,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Crist,53.9851398908379,1.2569526225142336,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Roos,0.722421999086718,0.2088562915567462,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Gimenez,0.5185870543463601,0.17081599023516572,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Rubio,42.267637904732,1.2361289800018544,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Demings,56.23018708216833,1.2418949449073329,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Third Party,0.993252538562322,0.2485054618111649,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Other,0.5089224745373558,0.1468155847509544,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Republican,42.63258115352559,1.250830398892596,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Democrat,54.356582194453814,1.261857687128961,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Third Party,1.2897999074260555,0.27397131859314733,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Other,1.7210367445945438,0.3345246242496026,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+climate,NA,1.9911922252848124,0.030537651166073817,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+wait_time,NA,5.788447120732054,0.5084154611821871,CMAGR,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,DeSantis,50.65364942480349,1.2228835719778544,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Crist,48.078305192311014,1.2186222654711634,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Roos,0.7302182399196852,0.21088709701001726,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Gimenez,0.5378271429658138,0.17910972788815743,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Rubio,48.35008450652966,1.2262350718864108,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Demings,49.974480367226,1.2223221306836463,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Third Party,1.0974306234313862,0.2416827271985117,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Other,0.5780045028129549,0.13654047718767928,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Republican,49.12268418907654,1.236639262699505,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Democrat,48.04994163424791,1.2277407856362474,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Third Party,1.328519797604413,0.24852282251547103,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Other,1.4988543790711433,0.28531913622594324,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+climate,NA,2.099761195192457,0.0295521705618581,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+wait_time,NA,5.316694444483469,0.34665623584091837,CMAGR+Party,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,DeSantis,50.637149676949754,1.1487913639873812,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Crist,48.08421224425429,1.1448478259387822,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Roos,0.7047645627606114,0.2092313584320177,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Gimenez,0.5738735160353459,0.18572721678596904,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Rubio,48.41169911876207,1.1517604597010338,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Demings,49.96077260979437,1.148463421956546,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Third Party,1.0909624010850245,0.25741460364474145,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Other,0.536565870358543,0.11827778068621453,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Republican,48.97185051860478,1.1617711592323907,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Democrat,48.32348568696043,1.1547141876613325,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Third Party,1.1937187233069173,0.24132108964669105,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+house_vote,Other,1.5109450711278762,0.24675018905404308,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+climate,NA,2.110275400052875,0.028059807363418822,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+wait_time,NA,5.1269585869586916,0.28641319912897856,CMAGR+Party+Precinct,"County, Votemode, Age, Gender, Race, Pid",FES w/Leon resample
+gov_vote,DeSantis,45.010475660372,1.254281755280907,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Crist,53.6947180211464,1.2575449671306895,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Roos,0.7678465238167117,0.2231340974851498,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Gimenez,0.5269597946648857,0.16874227651244972,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Rubio,42.45258375240659,1.2358079344536632,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Demings,56.015258932545855,1.2414669580825113,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Third Party,1.0436285039499615,0.2530998849249119,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Other,0.4885288110976026,0.13595831399425806,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Republican,42.79793714267205,1.2504977655315033,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Democrat,54.136331659499284,1.261256002858243,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Third Party,1.3368159959873667,0.2798832737957994,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Other,1.7289152018412968,0.32888233201517775,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+climate,NA,1.9966767399435357,0.030654302334990936,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+wait_time,NA,5.839262278924301,0.5132277484905993,CMAGR,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,DeSantis,50.839842819109585,1.220455399041506,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Crist,47.90362197446454,1.216016132618847,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Roos,0.7043424596716032,0.20241205055077532,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Gimenez,0.5521927467542794,0.18344511716947987,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Rubio,48.54500382005412,1.224138535867563,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Demings,49.768386269228124,1.219901683228897,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Third Party,1.1046361068301012,0.2390343006349994,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Other,0.5819738038876464,0.139199795805737,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Republican,49.32151265929346,1.2345841603277448,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Democrat,47.865693978347544,1.225345398128044,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Third Party,1.3117492890102773,0.24213385174987503,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Other,1.5010440733487174,0.29201813213461336,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+climate,NA,2.105367224832572,0.029496431280684625,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+wait_time,NA,5.363325335487161,0.3554782417229912,CMAGR+Party,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,DeSantis,50.64259119610598,1.1544130856545705,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Crist,48.03404605501479,1.149899180937456,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Roos,0.7159435465736759,0.21051361479464772,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+gov_vote,Gimenez,0.6074192023055554,0.19683988150089934,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Rubio,48.41598646418648,1.1581080858883412,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Demings,49.94657942390943,1.1543046068960463,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Third Party,1.1234568092307506,0.2604015792611933,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+sen_vote,Other,0.5139773026733405,0.11097865569778022,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Republican,49.00496674286569,1.1680930322990923,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Democrat,48.31693260400206,1.1603215264400728,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Third Party,1.209681519243951,0.24336020826864832,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+house_vote,Other,1.4684191338883057,0.245130377562145,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+climate,NA,2.1090469194752774,0.028266836380398806,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample
+wait_time,NA,5.102867780296349,0.2813140268201687,CMAGR+Party+Precinct,"County, Votemode, Gender, Race, Pid",FES w/Leon resample

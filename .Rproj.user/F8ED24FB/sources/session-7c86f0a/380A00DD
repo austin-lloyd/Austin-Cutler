@@ -1,0 +1,32 @@
+{
+    "id": "380A00DD",
+    "path": "~/Austin Cutler/graphs.qmd",
+    "project_path": "graphs.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1690586019155.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "0",
+        "rmdVisualCollapsedChunks": "",
+        "cursorPosition": "1020,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "269:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1747174977,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1747174977587,
+    "read_only": false,
+    "read_only_alternatives": []
+}

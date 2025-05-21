@@ -1,0 +1,16 @@
+---
+title: "About"
+---
+```{=html}
+<style>
+  /* Hide the title element on the page */
+  .title {
+    display: none;
+  }
+</style>
+```
+
+
+<img src = "headshotwithdogs.jpg" height = 400>
+
+I am a third year PhD student in the Department of Political Science at Florida State University. My research interests are broadly political behavior, with a special focus on polrization, partisanship, social identity theory, and race and ethnic politics. I grew up in Buffalo, New York, and currently have two dogs, Roland Jameson Cutler (a Shepard mix) and Zero Nelson Cutler (an American Staffordshire Terrier maybe).

@@ -1,0 +1,62 @@
+/*-- scss:defaults --*/
+// Default variable values and settings go here.
+
+
+/* Center the navigation bar */
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+ul.nav {
+  // Styles for the navigation container.
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #E95420;
+  text-align: center;
+}
+
+li.nav-item {
+  // Styles for each navigation item.
+  display: inline-block;
+}
+
+a.nav-link {
+  // Styles for the navigation links.
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #E95420;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 15px;
+  
+  &:hover {
+    background-color: darken(#E95420, 10%);
+  }
+  
+  &.active {
+    background-color: #808080;
+    color: #E95420;
+    &:hover {
+      background-color: #808080;
+    }
+  }
+}
+
+.tab-content {
+  // Styles for the tab content container.
+  border: 1px solid #E95420;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.tab-pane {
+  // Styles for each tab pane.
+  display: none;
+  
+  &.show {
+    display: block;
+  }
+}

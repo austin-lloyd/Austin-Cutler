@@ -1,0 +1,16 @@
+---
+title: "About"
+---
+```{=html}
+<style>
+  /* Hide the title element on the page */
+  .title {
+    display: none;
+  }
+</style>
+```
+
+
+<img src = "headshotwithdogs.jpg" height = 400>
+
+I am a third year PhD student in the Department of Political Science at Florida State University. 

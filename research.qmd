@@ -1,0 +1,21 @@
+---
+title: "Research"
+---
+```{=html}
+<style>
+  /* Hide the title element on the page */
+  .title {
+    display: none;
+  }
+</style>
+```
+
+## Working Papers
+
+- The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (with Hans J.G. Hassell and Kevin Reuning)
+
+    [This paper uses CES data from 2010 to 2022 to examine how voters' perception of candidates' ideological extremity influences their turnout and vote choice.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&e=2&dl=0)
+
+---
+- Who’s in Office Anyways? Estimating the Race of Elected Officials from Names with Neural Networks
+
