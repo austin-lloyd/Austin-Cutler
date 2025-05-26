@@ -2,6 +2,15 @@
 title: "About"
 ---
 
+```{=html}
+<style>
+  /* Hide the title element on the page */
+  .title {
+    display: none;
+  }
+</style>
+```
+
 <img src = "polmeth_pic.jpg" height = 400>
 
 Hello! My name is Austin Cutler, I am a PhD candidate at Florida State University and a research fellow for the LeRoy Collins Institute. My research interests are broadly political behavior, with a special focus on polarization, partisanship, social identity theory, and methods. Much of my research focuses on furthering our understanding of how people form their attitudes and what the consequences of these attitudes are. You can view [**my CV** here](cv.qmd).
