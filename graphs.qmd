@@ -14,7 +14,89 @@ toc: false
 I spend far too much time thinking about data visualization. To make that time a little more productive for myself, I'll use this part of the website to show off whatever graphs I've most recently made for the projects I'm working on, as well as the accompanying code.
 
 ```{r include = FALSE}
-knitr::opts_chunk$set(warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, eval = FALSE)
+```
+
+## Posterior Distribution of Treatment Effects
+This paper explores if race influences people's policy positions by serving as a cue for partisanship, or through some other mechanism, such as linked-fate or group affect towards racial groups. More details on this paper can be found in my [research section](research.qmd). The main results in the paper are shown using standard coefficient plots. While I'm confident that's the best way to show these results, the figure below shows posterior distribution of the difference between racial groups based on party. I'm aware that this looks like a very standard `ggridges` plot, however, I did not use `ggridges` because, as I discuss below as well the PVI figure, `ggplot` does a very poor job at varying the fill in a graph across the x-axis. However, with density plots, this is even worse as `ggplot` estimate the density grouping by the fill variable, resuting in a figure that does not really make sense. How I worked around this was by manually estimating the density, and then graphing it using a line and area plot. \*Disclaimer, this figure was generated using a little bit of help from ChatGPT.
+
+![](posterior_draws_density.png)
+
+```{r}
+#| code-fold: true
+
+# Step 1: Compute densities per group
+density_data <- draws %>%
+  group_by(v_party) %>%
+  group_map(~ {
+    min_x <- min(.x$diffs)
+    max_x <- max(.x$diffs)
+    d <- density(.x$diffs, from = min_x, to = max_x, n = 5000)
+    tibble(x = d$x, y = d$y, v_party = .y$v_party)
+  }) %>%
+  bind_rows()
+
+
+# Step 2: Assign threshold region based on x
+density_data <- density_data %>%
+  mutate(thresh = case_when(
+    x < -0.1 ~ 'negative',
+    x >= -0.1 & x <= 0.1 ~ 'neither',
+    x > 0.1 ~ 'positive'
+  ))
+
+# Optional: Set ordering for thresh to control fill colors later
+density_data$thresh <- factor(density_data$thresh, levels = c('negative', 'neither', 'positive'))
+
+#making text label dataframe
+tibble(x = -.15, y = 7.25, 
+       thresh = 'negative',
+       v_party = factor(c('Not Given', 'In-party', 'Out-party'),
+                        levels = c('Not Given', 'In-party', 'Out-party'))) -> lab_dat 
+
+#get the percent of observations in each category for labeling
+draws %>%
+  select(v_party,diffs) %>% 
+  mutate(thresh = case_when(diffs < -.1 ~ 'negative',
+                            (diffs >= -.1 & diffs < .1) ~ 'neither',
+                            diffs >= .1 ~ 'positive'),
+         thresh2 = case_when(diffs > 0.0001 ~ 'positive',
+                             diffs < -0.0001 ~ 'negative',
+                             (diffs > -0.0001 & diffs < 0.0001) ~ 'neither')) %>% 
+  group_by(v_party) %>%
+  mutate(pg = n()) %>% 
+  group_by(v_party,thresh) %>% 
+  summarize(per = n()/unique(pg),
+            .groups = 'drop') 
+
+# Step 3: Plot the precomputed densities with fill by threshold
+density_data %>% 
+  ggplot(aes(x = x, y = y, fill = thresh)) +
+  geom_area(color = "black") +
+  facet_grid(vars(v_party),switch = 'y') +
+  geom_vline(aes(xintercept = .1), linetype = 2)+
+  geom_vline(aes(xintercept = -.1), linetype = 2)+
+  geom_vline(aes(xintercept = 0), linetype = 3)+
+  labs(x = 'Difference between Sympathetic and Unsympathetic',
+       y = 'Vignette Party')+
+  scale_fill_manual(values = c('negative' = '#9F2B68',
+                               'neither'  = 'gray85',
+                               'positive' = '#ED7014'))+
+  geom_label(data = lab_dat, size = 6, fontface = 'bold',
+             fill = 'white', label.size = NA,
+            aes(x=x,y=y, label = v_party))+
+  scale_x_continuous(breaks = c(-.15,-.1,0,.1,.15),
+                     limits = c(-.175,.175))+
+  theme(
+    legend.position = 'none',
+    strip.text.y.left = element_blank(),#element_text(angle = 0, hjust = 0.5,
+                        #             size = 15),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    strip.background = element_blank(),
+    panel.spacing = unit(0, "lines"),
+    panel.border = element_blank())
+
 ```
 
 ### The Average Marginal Effect of In-party Candidate Extremism by District Partisan Advantage (2010 to 2022)
@@ -22,7 +104,7 @@ The paper this figure is in can be found [here](https://www.dropbox.com/scl/fi/4
 
 ![](full_in_pvi_marginal_ef.png)
 
-```{r, eval = FALSE}
+```{r}
 #| code-fold: true
 
 library(tidyverse)
@@ -1024,7 +1106,7 @@ shinyApp(ui, server)
 
 This figure is from an earlier version of the survey weighting paper.
 
-```{r, fig.width=12,fig.height=8,fig.align='center'}
+```{r, fig.width=12,fig.height=8,fig.align='center', eval = TRUE}
 #| code-fold: true
 library(tidyverse)
 library(scales)

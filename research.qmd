@@ -28,3 +28,11 @@ title: "Research"
 
     [For this paper I use panel data from the ANES 2016-2020 panel to assess the extent to which policy positions and affective polarization are related across several issues.]{style='color:gray'}
 -->
+
+## Conference Posters/Slides
+
+[Below are the papers that I have conferenced recently, with a brief description with the slides, poster, or both attached.]{style='color:gray'}
+
+- Party Cues or Group Sympathy? How Perceived Group Support Shapes Policy Beliefs
+
+    [This paper is a chapter of my dissertation where I explore the mechanism through which perceptions of social group support for a policy influence people's own policy positions. More specifically, I explore if racial group support for a policy influences people's own support for that policy due to people's attitudes towards that group, or if race is being used as a cue for party support. Using a vignette experiment, I find mixed evidence suggesting that race serves more as a party cue than directly influencing people's opinions.]{style='color:gray'} [Link to Polmeth 42 Poster](https://www.dropbox.com/scl/fi/ljly4gcd0xuacdsyggd75/cutler_polmeth_poster_25.pdf?rlkey=44uz4cb49a4qkqs5vhm1n9ejo&st=dhcnkyz9&dl=0)
