@@ -39,7 +39,7 @@
     "href": "classes.html#summer-rii-workshop",
     "title": "Workshops",
     "section": "Summer RII workshop",
-    "text": "Summer RII workshop\nThis workshop is for rising second year PhD students, and builds off of the material covered in the RI workshop, as well as their classes throughout their first year. The goal of this workshop is to be a refresher on R for grad students after taking some time off, and to prepare them for taking MLE. Grad students who are not starting their second year have also taken it in the past."
+    "text": "Summer RII workshop\nThis workshop is for rising second year PhD students, and builds off of the material covered in the RI workshop, as well as their classes throughout their first year. The goal of this workshop is to be a refresher on R for grad students after taking some time off, and to prepare them for taking MLE. Grad students who are not starting their second year have also taken it in the past. The workshop covers different data structures, for loops, data simulations, creating functions, and optimization."
   },
   {
     "objectID": "about.html",
