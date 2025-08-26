@@ -12,6 +12,12 @@ title: "Research"
 
 ## Working Papers
 
+- Merely Asking A Replication of Ahler and Sood (2018) (with Matthew T. Pietryka and Carlisle Rainey)
+
+    [Since Ahler and Sood (2018) was originally published, a growing literature has found that correcting people's misperceptions about the out-party reduces affective polarization. However, as noted by Ahler and Sood, "merely asking" respondents to report thier perceptions, also leads to a statistically significant reduction in out-party animosity. This result has been largely ignored in subsequent research. In this preregistered report, we propose a replication of Ahler and Sood's most important result using a well-powered, pre-registered survey experiment. This paper is currently an R&R at JOP.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/cldf7etwj4d8d1nfkx3kl/cutler_pietryka_rainey_merely_asking.pdf?rlkey=iztyo4d92z841qbjlvezky6un&st=2rzv98ii&dl=0)
+
+---
+
 - The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (with Hans J.G. Hassell and Kevin Reuning)
 
     [This paper uses CES data from 2010 to 2022 to examine how voters' perception of candidates' ideological extremity influences their turnout and vote choice.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&e=2&dl=0)
