@@ -12,13 +12,13 @@ title: "Research"
 
 ## Working Papers
 
-- Merely Asking A Replication of Ahler and Sood (2018) (with Matthew T. Pietryka and Carlisle Rainey)
+- Merely Asking A Replication of Ahler and Sood (2018) (*R&R at JOP*, with Matthew T. Pietryka and Carlisle Rainey)
 
-    [Since Ahler and Sood (2018) was originally published, a growing literature has found that correcting people's misperceptions about the out-party reduces affective polarization. However, as noted by Ahler and Sood, "merely asking" respondents to report thier perceptions, also leads to a statistically significant reduction in out-party animosity. This result has been largely ignored in subsequent research. In this preregistered report, we propose a replication of Ahler and Sood's most important result using a well-powered, pre-registered survey experiment. This paper is currently an R&R at JOP.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/cldf7etwj4d8d1nfkx3kl/cutler_pietryka_rainey_merely_asking.pdf?rlkey=iztyo4d92z841qbjlvezky6un&st=2rzv98ii&dl=0)
+    [Since Ahler and Sood (2018) was originally published, a growing literature has found that correcting people's misperceptions about the out-party reduces affective polarization. However, as noted by Ahler and Sood, "merely asking" respondents to report thier perceptions, also leads to a statistically significant reduction in out-party animosity. This result has been largely ignored in subsequent research. In this preregistered report, we propose a replication of Ahler and Sood's most important result using a well-powered, pre-registered survey experiment.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/cldf7etwj4d8d1nfkx3kl/cutler_pietryka_rainey_merely_asking.pdf?rlkey=iztyo4d92z841qbjlvezky6un&st=2rzv98ii&dl=0)
 
 ---
 
-- The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (with Hans J.G. Hassell and Kevin Reuning)
+- The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (*Under review at JOP*, with Hans J.G. Hassell and Kevin Reuning)
 
     [This paper uses CES data from 2010 to 2022 to examine how voters' perception of candidates' ideological extremity influences their turnout and vote choice.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&e=2&dl=0)
 
@@ -32,7 +32,7 @@ title: "Research"
 
 - Creating Interactive Data Dashboards with Ballot Images (with Lonna Atkeson, Yimeng Li, Wendy Hansen, Lisa Bryant, and Carson Cary)
 
-    [In this project, we develop best practices for displaying ballot images online to improve transparency in elections. To do this, we develop interactive dashboards to display ballot images online, along with audit data and the cast vote record. The two primary hurdles we address are the protection of voters privacy, and preparing the data for presentation. When showing ballot images, people may sign their names when they should not, which results in a violation of their privacy. The data is also very large, making it a challenge to prepare it in such a way that it can be easily presented. This project is currently under contract as a cambridge elements piece. The link to our website where the dashboards are currently hosted is [here](https://www.voterdata.lci.fsu.edu/), and our technical report about the pilot project for the dashboard can be found [here](https://lrci-main-web-app.s3.us-east-1.amazonaws.com/23-LCI-002-Audit-Technical-Report-V1_4_LA2.pdf).]{style='color:gray'}
+    [In this project, we develop best practices for displaying ballot images online to improve transparency in elections. To do this, we develop interactive dashboards to display ballot images online, along with audit data and the cast vote record. The two primary hurdles we address are the protection of voters privacy, and preparing the data for presentation. When showing ballot images, people may sign their names when they should not, which results in a violation of their privacy. The data is also very large, making it a challenge to prepare it in such a way that it can be easily presented. This project is currently *under contract* as a Cambridge Elements piece. The link to our website where the dashboards are currently hosted is [here](https://www.voterdata.lci.fsu.edu/), and our technical report about the pilot project for the dashboard can be found [here](https://lrci-main-web-app.s3.us-east-1.amazonaws.com/23-LCI-002-Audit-Technical-Report-V1_4_LA2.pdf).]{style='color:gray'}
 
 ---
 
