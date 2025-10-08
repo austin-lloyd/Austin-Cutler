@@ -1,9 +1,9 @@
 ---
-title: "Workshops"
+title: "Teaching Resources"
 ---
 
 
-While at FSU I have taught several workshops on using R. Here I have a brief description of the workshop as well as a link to the course's website.
+On this page I've compiled all the course materials for two workshops I have taught for graduate students at FSU, as well as other resources I've made for teaching.
 
 ## [Basic Computing with R](https://austin-cutler.quarto.pub/summer-ri-workshop/)
 
@@ -12,3 +12,7 @@ This workshop is for incoming first year PhD students to FSU. This workshop assu
 ## [Advanced Computing with R](https://austin-cutler.quarto.pub/summer-rii-workshop/)
 
 This workshop is for rising second year PhD students, and builds off of the material covered in the RI workshop, as well as their classes throughout their first year. The goal of this workshop is to be a refresher on R for grad students after taking some time off, and to prepare them for taking MLE. Grad students who are not starting their second year have also taken it in the past. The workshop covers different data structures, for loops, data simulations, creating functions, and optimization.
+
+## [Dice Rolling Statistics](https://austin-cutler.shinyapps.io/die_roll_check_sim/)
+
+I threw together a shinyapp that serves two functions. First, you can manually enter in the frequency of dice rolls to get summary statistics from them. I did this to make grading one of the problem sets for my research methods class a little easier, making it so I just need to enter their data in and check their results rather than getting the values by hand. The second use of this app is you can simulate dice rolls for a large number of samples, setting the size of each sample. This allows you to show in real time how the central limit theorem and law of large numbers works. I'm confident similar tools exist, but thought this was neat.

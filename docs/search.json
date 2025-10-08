@@ -37,21 +37,21 @@
   {
     "objectID": "classes.html",
     "href": "classes.html",
-    "title": "Workshops",
+    "title": "Teaching Resources",
     "section": "",
-    "text": "While at FSU I have taught several workshops on using R. Here I have a brief description of the workshop as well as a link to the course’s website."
+    "text": "On this page I’ve compiled all the course materials for two workshops I have taught for graduate students at FSU, as well as other resources I’ve made for teaching."
   },
   {
     "objectID": "classes.html#basic-computing-with-r",
     "href": "classes.html#basic-computing-with-r",
-    "title": "Workshops",
+    "title": "Teaching Resources",
     "section": "Basic Computing with R",
     "text": "Basic Computing with R\nThis workshop is for incoming first year PhD students to FSU. This workshop assumes no prior R experience and is designed to give incoming first year students a head start on learning to us R and Rstudio. The workshop covers installing R, basic functions in R, reading data into R, types of data, data cleaning, generating summary statistics, boolen logic, data visualization, for loops, and (briefly), writing functions in R. We also briefly cover expectations for graduate student life in general, and some aspects of using R that are tangentially related, such as computer file structures. The workshop is taught primarily using tidyverse, however for most applications the BaseR equivalent is also covered. The workshop is taught over four sessions, and the goal is for students to have a solid foundation for how R works before moving on to their first semester where they will solidify the skills taught in the class. I taught this workshop in the summer of 2023 and 2024, and helped develop the materials for the workshop for summer 2025."
   },
   {
     "objectID": "classes.html#advanced-computing-with-r",
     "href": "classes.html#advanced-computing-with-r",
-    "title": "Workshops",
+    "title": "Teaching Resources",
     "section": "Advanced Computing with R",
     "text": "Advanced Computing with R\nThis workshop is for rising second year PhD students, and builds off of the material covered in the RI workshop, as well as their classes throughout their first year. The goal of this workshop is to be a refresher on R for grad students after taking some time off, and to prepare them for taking MLE. Grad students who are not starting their second year have also taken it in the past. The workshop covers different data structures, for loops, data simulations, creating functions, and optimization."
   },
@@ -75,5 +75,12 @@
     "title": "About",
     "section": "",
     "text": "Hello! My name is Austin Cutler, I am a PhD candidate at Florida State University and a research fellow for the LeRoy Collins Institute. My research interests are broadly political behavior, with a special focus on polarization, partisanship, social identity theory, and methods. Much of my research focuses on furthering our understanding of how people form their attitudes and what the consequences of these attitudes are. You can view my CV here.\nBefore coming to Florida State, I received my master’s from the University of Mississippi in political science in 2021. I received my bachelor’s degree from SUNY Geneseo in 2019, where I double majored in political science and anthropology. I grew up in Buffalo, New York (go Bills!), and currently have two dogs, Roland and Zero (and a bonus picture of them together)."
+  },
+  {
+    "objectID": "classes.html#dice-rolling-statistics",
+    "href": "classes.html#dice-rolling-statistics",
+    "title": "Teaching Resources",
+    "section": "Dice Rolling Statistics",
+    "text": "Dice Rolling Statistics\nI threw together a shinyapp that serves two functions. First, you can manually enter in the frequency of dice rolls to get summary statistics from them. I did this to make grading one of the problem sets for my research methods class a little easier, making it so I just need to enter their data in and check their results rather than getting the values by hand. The second use of this app is you can simulate dice rolls for a large number of samples, setting the size of each sample. This allows you to show in real time how the central limit theorem and law of large numbers works. I’m confident similar tools exist, but thought this was neat."
   }
 ]
