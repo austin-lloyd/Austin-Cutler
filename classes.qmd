@@ -13,6 +13,10 @@ This workshop is for incoming first year PhD students to FSU. This workshop assu
 
 This workshop is for rising second year PhD students, and builds off of the material covered in the RI workshop, as well as their classes throughout their first year. The goal of this workshop is to be a refresher on R for grad students after taking some time off, and to prepare them for taking MLE. Grad students who are not starting their second year have also taken it in the past. The workshop covers different data structures, for loops, data simulations, creating functions, and optimization.
 
+## [Multivariate Regression Visualization](https://austin-cutler.shinyapps.io/Multiple_Regression_Visualization/)
+
+I made a shinyapp that allows you to visualize multivariate regression with 2 independent variables. You can vary the slope for each variable, the sample size, and the y-intercept. I've used this to teach multivariate regression and feel that it helps students better understand what it means to "control for" additional variables. I plan to update it eventually to show some diagnostics of the model or to demonstrate the problems with omitted variable bias. The default regression that it estimates is: $Y\sim1+2X-5Z$.
+
 ## [Dice Rolling Statistics](https://austin-cutler.shinyapps.io/die_roll_check_sim/)
 
 I threw together a shinyapp that serves two functions. First, you can manually enter in the frequency of dice rolls to get summary statistics from them. I did this to make grading one of the problem sets for my research methods class a little easier, making it so I just need to enter their data in and check their results rather than getting the values by hand. The second use of this app is you can simulate dice rolls for a large number of samples, setting the size of each sample. This allows you to show in real time how the central limit theorem and law of large numbers works. I'm confident similar tools exist, but thought this was neat.
