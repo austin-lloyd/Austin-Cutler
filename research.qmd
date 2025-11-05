@@ -12,6 +12,12 @@ title: "Research"
 
 ## Working Papers
 
+- Affective Policy Preferences: How Group Affect Can Shape Policy Positions
+
+    [Using ANES panel data, and an original survey experiment, I try to improve our understanding of the relationship between affective polarization and public opinion. Using cross lagged panel models, I find that affective polarization consistently predicts people's policy positions. Furthermore, I when separately analyzing the effect of in-party and out-party affect, I find that in-party affect is a stronger predictor of people's policy positions. These findings from observational analysis are cooberated by a survey experiment.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/con186lxj9mm5myj0h300/cutler_affective_polarization_policy_APSA_2025.pdf?rlkey=wmmiwswqrvry38vxsl6uyj05v&st=sn3gwmw0&dl=0)
+
+---
+
 - Merely Asking A Replication of Ahler and Sood (2018) (*R&R at JOP*, with Matthew T. Pietryka and Carlisle Rainey)
 
     [Since Ahler and Sood (2018) was originally published, a growing literature has found that correcting people's misperceptions about the out-party reduces affective polarization. However, as noted by Ahler and Sood, "merely asking" respondents to report thier perceptions, also leads to a statistically significant reduction in out-party animosity. This result has been largely ignored in subsequent research. In this preregistered report, we propose a replication of Ahler and Sood's most important result using a well-powered, pre-registered survey experiment.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/cldf7etwj4d8d1nfkx3kl/cutler_pietryka_rainey_merely_asking.pdf?rlkey=iztyo4d92z841qbjlvezky6un&st=2rzv98ii&dl=0)
@@ -20,13 +26,13 @@ title: "Research"
 
 - The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (*Under review at JOP*, with Hans J.G. Hassell and Kevin Reuning)
 
-    [This paper uses CES data from 2010 to 2022 to examine how voters' perception of candidates' ideological extremity influences their turnout and vote choice.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&e=2&dl=0)
+    [This paper uses CES data from 2010 to 2022 to examine how voters' perception of candidates' ideological extremity influences their turnout and vote choice. We find little evidence of a candidate extremist penalty, with results showing that if anything, in-party turnout is _increased_. These results may be mediated by district competitiveness.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&e=2&dl=0)
 
 ---
 
 - Who’s in Office Anyways? Estimating the Race of Elected Officials from Names with Neural Networks
 
-    [In this paper, I use data from the Florida voter file and the Candidates Characteristics Cooperative (C3) to estimate the race of state legislative officials using their names by training a BiLSTM model on both the voter file and the C3 data. I compare this approach to other approaches of race estimation using names, and find that in most cases, race predictions improve when using state legislator data. I then analyze how these different strategies for estimating race may impact findings, namely electoral outcomes.]{style='color:gray'} [Link to Polmeth 41 Poster](https://www.dropbox.com/scl/fi/sx7si7lnoqmdv1e1r2r7z/cutler_polmeth_poster_24.pdf?rlkey=bwjafw8rsuc4w98bmix74nn9e&dl=0)
+    [In this paper, I use data from the Florida voter file and the Candidates Characteristics Cooperative (C3) to estimate the race of state legislative officials using their names by training a BiLSTM model on both the voter file and the C3 data. I compare this approach to other approaches of race estimation using names, and find that in most cases, race predictions improve when using state legislator data. I then analyze how these different strategies for estimating race may impact findings, namely electoral outcomes.]{style='color:gray'} [Link to paper.](https://www.dropbox.com/scl/fi/7v85ii2abkfge5vxid2ld/cutler_estimate_race_nn.pdf?rlkey=y6ms4lnfdxos1e7fzr8k2wcp4&dl=0}{link to paper draft)
 
 ---
 
@@ -36,18 +42,13 @@ title: "Research"
 
 ---
 
-- Affective Policy Preferences: How Group Affect Can Shape Policy Positions
-
-    [Using ANES panel data, and an original survey experiment, I try to improve our understanding of the relationship between affective polarization and public opinion. Using cross lagged panel models, I find that affective polarization consistently predicts people's policy positions. Furthermore, I when separately analyzing the effect of in-party and out-party affect, I find that in-party affect is a stronger predictor of people's policy positions. These findings from observational analysis are cooberated by a survey experiment.]{style='color:gray'}
----
-
 ## Conference Posters/Slides
 
 [Below are some papers that I have conferenced recently, with a brief description with the slides, poster, or both attached, when possible. Only papers that have not made it past the conference paper stage are included below.]{style='color:gray'}
 
 - Party Cues or Group Sympathy? How Perceived Group Support Shapes Policy Beliefs
 
-    [This paper is a chapter of my dissertation where I explore the mechanism through which perceptions of social group support for a policy influence people's own policy positions. More specifically, I explore if racial group support for a policy influences people's own support for that policy due to people's attitudes towards that group, or if race is being used as a cue for party support. Using a vignette experiment, I find mixed evidence suggesting that race serves more as a party cue than directly influencing people's opinions.]{style='color:gray'} [Link to Polmeth 42 Poster](https://www.dropbox.com/scl/fi/ljly4gcd0xuacdsyggd75/cutler_polmeth_poster_25.pdf?rlkey=44uz4cb49a4qkqs5vhm1n9ejo&st=dhcnkyz9&dl=0)
+    [This paper is a chapter of my dissertation where I explore the mechanism through which perceptions of social group support for a policy influence people's own policy positions. More specifically, I explore if racial group support for a policy influences people's own support for that policy due to people's attitudes towards that group, or if race is being used as a cue for party support. Using a vignette experiment, I find mixed evidence suggesting that race serves more as a party cue than directly influencing people's opinions.]{style='color:gray'} [Link to Polmeth 42 Poster.](https://www.dropbox.com/scl/fi/ljly4gcd0xuacdsyggd75/cutler_polmeth_poster_25.pdf?rlkey=44uz4cb49a4qkqs5vhm1n9ejo&st=dhcnkyz9&dl=0)
     
 - Seeing is Believing: Estimating the Effect of Misperceptions on Affective Poalrization Using Topic Sampling
 
