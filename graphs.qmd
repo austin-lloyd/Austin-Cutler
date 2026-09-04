@@ -376,10 +376,10 @@ margin_in_full %>%
 
 ### Data Dashboard
 
-Part of my work with the LeRoy Collins Institute has been to work on our election audit dashboard. For this, I created an interactive dashboard using `shiny` to display both the audit data and ballot images for several elections from Leon county. We're currently working to expand the project to several other counties. The data dashboard for the 2024 general election in Leon county can be found below, but can be opened in full screen (which is a better experience in my opinion) by clicking [here](https://lci-dashboards.duckdns.org/leon-gen-2024/). The dashboards for other years can be found on [our website](https://www.voterdata.lci.fsu.edu/).
+Part of my work with the LeRoy Collins Institute has been to work on our election audit dashboard. For this, I created an interactive dashboard using `shiny` to display both the audit data and ballot images for several elections from Leon county. We're currently working to expand the project to several other counties. The data dashboard for the 2024 general election in Leon county can be found below, but can be opened in full screen (which is a better experience in my opinion) by clicking [here](https://dashboards.lci.fsu.edu/leon-gen-2024/). The dashboards for other years can be found on [our website](https://www.voterdata.lci.fsu.edu/).
 
 <div>
-  <iframe src="https://lci-dashboards.duckdns.org/leon-gen-2024/" width="1300" height="800" style="border: .5px solid black; margin-left: -225px;"></iframe>
+  <iframe src="https://dashboards.lci.fsu.edu/leon-gen-2024/" width="1300" height="800" style="border: .5px solid black; margin-left: -225px;"></iframe>
 </div>
 
 ```{r eval = FALSE}
