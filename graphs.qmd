@@ -2,14 +2,13 @@
 title: "Data Viz"
 toc: false
 ---
-```{=html}
+
 <style>
   /* Hide the title element on the page */
   .title {
     display: none;
   }
 </style>
-```
 
 I spend far too much time thinking about data visualization. To make that time a little more productive for myself, I'll use this part of the website to show off whatever graphs I've most recently made for the projects I'm working on, as well as the accompanying code.
 
@@ -17,7 +16,159 @@ I spend far too much time thinking about data visualization. To make that time a
 knitr::opts_chunk$set(warning=FALSE, message=FALSE, eval = FALSE)
 ```
 
+## Most Important Problem Over Time
+
+In [this paper](https://www.dropbox.com/scl/fi/con186lxj9mm5myj0h300/cutler_affective_polarization_policy_APSA_2025.pdf?rlkey=wmmiwswqrvry38vxsl6uyj05v&st=sn3gwmw0&dl=0) I examine the relationship between affective polarization and policy attitudes. One of the arguments I make is that the previous literature examining this relationship focused to heavily on high salience issues. To make this point, I got access to the Gallup Poll Social Series over time data and analyzed the commonly used "most important problem" question responses. For part of this, I needed to bin some responses to match the policies I was using in my paper, and wanted to show how it varies over time. I focused on 2016-2024 since that is when I have panel data for in my main analysis. This is also a figure that I had help from Claude to make. I created the underlying structure of the figure on my own, and knew I was going to need to repeatedly stack the data to get the figure to look how I wanted. Claude wrote the code for stacking the data, and updated some of my code to clean up some parts of the figure. I then added in the labels, and added in the circles highlighting the points where I actually have data, which almost happened on accident at first. The end result shows the 9 policy labels, with all 70+ other policies in the background. I tried to be generous when binning policies just due to how low each policy is with there being so many. The figure and its code can be found below.
+
+![](mip_over_time.png)
+
+```{r}
+#| code-fold: true
+library(tidyverse)
+library(kableExtra)
+
+## theme setting
+theme_set(theme_light() +
+            theme(legend.position = 'none',
+                  panel.grid = element_line(linetype = 2,
+                                            color = alpha('lightgray', .6)),
+                  strip.background = element_rect(fill = 'white', color = 'gray'),
+                  strip.text   = element_text(color = 'black', size = 35,
+                                              face = 'bold'),
+                  axis.title = element_text(size = 30),
+                  axis.text  = element_text(size = 25)))
+
+#loading in gallup data
+haven::read_dta('anes/data/mip/GPSS Environment Final GA Aggregate.dta') -> gallup
+
+##getting just the years we care about
+target_issues <- c('Immigration', 'Climate change', 'Public health insurance',
+                   'Gun control', 'School spending', 'Aid to poor',
+                   'Free trade', 'Tax millionaires', 'Paid parental leave')
+
+gallup %>% 
+  select(id,wtfctr,yr,fips,mip1,mip2,mip3,partyr) %>% 
+  mutate(across(contains('mip'), ~labelled::to_factor(.)),
+         across(contains('mip'), ~str_to_lower(.)),
+         across(contains('mip'), ~case_when(str_detect(.,'gun|shooting') ~ 'Gun control',
+                                            str_detect(.,'trade') ~ 'Free trade',
+                                            str_detect(.,'education') ~ 'School spending',
+                                            str_detect(.,'welfare') ~ 'Aid to poor',
+                                            str_detect(.,'rich') ~ 'Tax millionaires',
+                                            str_detect(.,'immigration|undocumented') ~ 'Immigration',
+                                            str_detect(.,'environment|energy') ~ 'Climate change',
+                                            str_detect(.,'insurance|health') ~ 'Public health insurance',
+                                            str_detect(.,'children|family') ~ 'Paid parental leave',
+                                            . %in% c('dk','other','79','80','96') ~ NA,
+                                            TRUE ~ .),
+                .names = '{.col}_clean'),
+         mip_any = case_when(
+           mip1_clean %in% target_issues ~ mip1_clean,
+           mip2_clean %in% target_issues ~ mip2_clean,
+           mip3_clean %in% target_issues ~ mip3_clean,
+           TRUE                  ~ mip1_clean
+         ),
+         partyr  = case_when(partyr == 1 ~ 'Republican',
+                             partyr == 2 ~ 'Independent',
+                             partyr == 3 ~ 'Democrat',
+                             TRUE ~ NA)) -> gallup_mip 
+
+##weighted numerator
+gallup_mip %>%
+  filter(!is.na(wtfctr)) %>%
+  pivot_longer(c(mip1_clean, mip2_clean, mip3_clean),
+               names_to = "mention", values_to = "issue") %>%
+  filter(!is.na(issue)) %>%          # <- unanswered mip2 / mip3
+  distinct(id, yr, wtfctr, issue) %>%
+  count(yr, issue, wt = wtfctr) -> numer
+
+##weighted denominator
+gallup_mip %>%
+  filter(!is.na(wtfctr)) %>%
+  distinct(id, yr, wtfctr) %>%
+  count(yr, wt = wtfctr, name = "total") -> denom
+
+##getting proportions
+numer %>% 
+  left_join(denom, by = 'yr') %>% 
+  mutate(per = n / total) -> mip_t
+
+#plot
+# order facets by mean salience so the variation reads left to right
+all_dat <- mip_t %>%
+  filter(yr <= 2024&yr >= 2015, !is.na(issue))
+
+target_dat <- all_dat %>% filter(issue %in% target_issues)
+
+issue_levels <- target_dat %>%
+  group_by(issue) %>%
+  summarise(m = mean(per, na.rm = TRUE), .groups = "drop") %>%
+  arrange(desc(m)) %>%
+  pull(issue)
+
+# background: every issue in the data except the focal one, in each facet
+bg <- map_dfr(issue_levels, function(f) {
+  all_dat %>%
+    filter(issue != f) %>%
+    transmute(yr, per, series = issue, facet = f)
+}) %>%
+  mutate(facet = factor(facet, levels = issue_levels))
+
+fg <- target_dat %>%
+  transmute(yr, per, series = issue,
+            facet = factor(issue, levels = issue_levels))
+
+#now getting the labels
+highlight_yrs <- c(2016, 2020, 2022, 2024)
+
+lab_dat <- fg %>% filter(yr %in% highlight_yrs)
+
+#making the plot
+bg %>% 
+  ggplot() +
+  geom_line(aes(yr, per, group = series),
+            color = "grey88", linewidth = 0.3) +
+  geom_line(data = fg, aes(yr, per, color = facet), linewidth = 1) +
+  geom_point(data = fg, aes(yr, per, color = facet), size = 1.2) +
+  # emphasise the highlighted years
+  geom_point(data = lab_dat, aes(yr, per), color = 'black',
+             size = 2.75, shape = 1) +
+  ggrepel::geom_label_repel(
+    data = lab_dat,
+    aes(yr, per, color = facet,
+        label = scales::percent(per, accuracy = 0.1)),
+    size = 2.8,
+    label.size = 0.4,
+    direction = "y",          # vertical only, so labels stay over their year
+    nudge_y = 0.01,
+    min.segment.length = Inf, # no connector lines
+    seed = 117
+  ) +
+  ggrepel::geom_label_repel(
+    data = lab_dat,
+    aes(yr, per,
+        label = scales::percent(per, accuracy = 0.1)),
+    color = 'black',
+    fill = NA,
+    label.size = 0,
+    size = 2.8,
+    direction = "y",
+    nudge_y = 0.01,
+    min.segment.length = Inf,
+    seed = 117                    # SAME seed, or the layers won't align
+  ) +
+  facet_wrap(vars(facet), ncol = 3) +
+  scale_x_continuous(breaks = c(2016,2018,2020,2022,2024)) +
+  scale_y_continuous(labels = scales::percent) +
+  #scale_color_brewer(palette = 'Set1') +
+  scale_color_manual(values = khroma::color('muted')(9))+
+  guides(color = "none") +
+  labs(x = 'Year', y = 'Percent Naming Issue')
+
+```
+
 ## Posterior Distribution of Treatment Effects
+
 This paper explores if race influences people's policy positions by serving as a cue for partisanship, or through some other mechanism, such as linked-fate or group affect towards racial groups. More details on this paper can be found in my [research section](research.qmd). The main results in the paper are shown using standard coefficient plots. While I'm confident that's the best way to show these results, the figure below shows posterior distribution of the difference between racial groups based on party. I'm aware that this looks like a very standard `ggridges` plot, however, I did not use `ggridges` because, as I discuss below as well the PVI figure, `ggplot` does a very poor job at varying the fill in a graph across the x-axis. However, with density plots, this is even worse as `ggplot` estimate the density grouping by the fill variable, resuting in a figure that does not really make sense. How I worked around this was by manually estimating the density, and then graphing it using a line and area plot. \*Disclaimer, this figure was generated using a little bit of help from ChatGPT.
 
 ![](posterior_draws_density.png)
@@ -100,6 +251,7 @@ density_data %>%
 ```
 
 ### The Average Marginal Effect of In-party Candidate Extremism by District Partisan Advantage (2010 to 2022)
+
 The paper this figure is in can be found [here](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&dl=0). The goal of this figure is to show how the average marginal effect of the ideological extremity of a respondent in the CES's in-party candidate varies based on the level of district competition. The code below only includes the code for this figure specifically and not the remainder of the analysis. The tricky thing with this figure was getting the regions to be fully continuous, as PVI as an integer variable. Part of the code creates synthetic data at the points in between where the marginal effect is not significant and where it is to make the regions seamlessly change. I am not sure why `geom_ribbon()` does not just do this in the first place, but the approach I used worked just fine.
 
 ![](full_in_pvi_marginal_ef.png)
@@ -223,13 +375,12 @@ margin_in_full %>%
 ```
 
 ### Data Dashboard
+
 Part of my work with the LeRoy Collins Institute has been to work on our election audit dashboard. For this, I created an interactive dashboard using `shiny` to display both the audit data and ballot images for several elections from Leon county. We're currently working to expand the project to several other counties. The data dashboard for the 2024 general election in Leon county can be found below, but can be opened in full screen (which is a better experience in my opinion) by clicking [here](https://lci-dashboards.duckdns.org/leon-gen-2024/). The dashboards for other years can be found on [our website](https://www.voterdata.lci.fsu.edu/).
 
-```{=html}
 <div>
   <iframe src="https://lci-dashboards.duckdns.org/leon-gen-2024/" width="1300" height="800" style="border: .5px solid black; margin-left: -225px;"></iframe>
 </div>
-```
 
 ```{r eval = FALSE}
 #| code-fold: true
@@ -1102,6 +1253,7 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 
 ```
+
 ### Matching to Improve Ron DeSantis voteshare in the Florida Elections Study (FES) and the CES
 
 This figure is from an earlier version of the survey weighting paper.
