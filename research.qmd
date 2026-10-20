@@ -23,7 +23,7 @@ title: "Research"
 
 ------------------------------------------------------------------------
 
--   The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (*Under review at JOP*, with Hans J.G. Hassell and Kevin Reuning)
+-   The Effect of Candidate Ideological Extremism on Vote Choice and Turnout (*R&R at Political Behavior*, with Hans J.G. Hassell and Kevin Reuning)
 
     [This paper uses CES data from 2010 to 2022 to examine how voters' perception of candidates' ideological extremity influences their turnout and vote choice. We find little evidence of a candidate extremist penalty, with results showing that if anything, in-party turnout is *increased*. These results may be mediated by district competitiveness.]{style="color:gray"} [Link to paper.](https://www.dropbox.com/scl/fi/4vlq73wrfprx04hboxlan/CHR__Political_Extremism_Penalty_.pdf?rlkey=gqp8x5i6wd8anktrkjn0m71dk&e=2&dl=0)
 
